@@ -62,7 +62,7 @@ def update_comments_in_db(db_name='ias'):
     # добовление комментариев в таблицы БД
     processed_full_table_names = []
     log = []
-    current_time = datetime.datetime.today().strftime('%d-%m-%Y-%H:%M:%S')
+    current_time = datetime.datetime.today().strftime('%d-%m-%Y-%H.%M.%S')
     with engine.connect() as conn:
         for schema_name, columns in zip(csv_file_names, container):
             for table_name, comment in zip(columns[0], columns[1]):
